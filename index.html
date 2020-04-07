@@ -1,0 +1,151 @@
+<html>
+<head>
+<title>Home</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="jquery-ui.js"></script>
+<script src="jquery-ui.min.js"></script>
+</head>
+<body>
+<div class="Intro">
+<img src="profile.jpg" class="Avatar" />
+
+<h1 class="Name">Subham Nagar</h1>
+
+<div class="Social">
+<a href="https://www.facebook.com/subham.nagar.7" target="_blank"><img src="fb.png" class="Link1" /></a>
+<a href="https://www.linkedin.com/in/subham-nagar-53893478/" target="_blank"><img src="linked.png" class="Link2" /></a>
+<a href="https://twitter.com/nagar7subham" target="_blank"><img src="twitter.png" class="Link3" /></a>
+</div>
+
+<div class="Interests">
+<p class="Interest"><h2 class="Interest_Font">|---Interests---|<br>| Data Science | Machine Learning | Software Development |</h2></p>
+</div>
+
+<div class="Quote">
+<h3 class="QuoteHeader"> My Life's Philosophy </h3>
+<p class="Sachin">" Chase your dreams. Dreams do come True"</p>
+<p class="Tend">- Sachin Tendulkar</p>
+</div>
+</div>
+
+<div class="Resume">
+<a href="https://drive.google.com/file/d/1pu6wFHgTYv2v9PXdMFkPOdQOfhRR0D1H/view" target="_blank"><h2 class="Resume_h">View Subham's Resume</h2></a>
+</div>
+
+<h2 class="TimelineHeader">Career Timeline</h2>
+<div class="Timeline">
+	<ul>
+		<li>
+			<div class="Event" data-aos="fade-up">
+				<h3>Dhirubhai Ambani Institute of Information and Communication Technology</h3>
+				<p>Pursuing MTech in Machine Learning Specialization </p>
+				<p> As Teaching Assistant, organize labs to teach BTech Students </p>
+			</div>
+			<div class="Time" >
+				<h4> July 2019 - Present </h4>
+			</div>
+		</li>
+		<li>
+			<div class="Event" data-aos="fade-up">
+				<h3>Tata Consultancy Services</h3>
+				<p>Assistant System Engineer</p>
+				<p>Developing SQL Scripts for performance improvement</p>
+				<p>Generating Reports for Clients</p>
+				<p>Leading The Support team and Solving Issues</p>
+			</div>
+			<div class="Time" >
+				<h4> November 2016 - June 2019</h4>
+			</div>
+		</li>
+		<li>
+			<div class="Event"data-aos="fade-up">
+				<h3>TCS ILP Innovation Labs</h3>
+				<p>Project on Counting Persons in a Video using Python</p>
+				<p>Project on Number Plate Extraction using Python</p>
+				<p>Project on Digit Extraction from scanned Written Forms using Python</p>
+			</div>
+			<div class="Time">
+				<h4> July 2016 - October 2016 </h4>
+			</div>
+		</li>
+		<li>
+			<div class="Event" data-aos="fade-up">
+				<h3>RCC Institute of Information Technology</h3>
+				<p>B.Tech in Computer Science and Engineering</p>
+				<p>CGPA - 8.21</p>
+			</div>
+			<div class="Time">
+				<h4> June 2012 - June 2016 </h4>
+			</div>
+		</li>
+		<li>
+			<div class="Event" data-aos="fade-up">
+				<h3>ST Thomas' Church School</h3>
+				<p> ISC Examination: 84%</p>
+			</div>
+			<div class="Time">
+				<h4> June 2012 </h4>
+			</div>
+		</li>
+		<li>
+			<div class="Event" data-aos="fade-up">
+				<h3>ST Thomas' Church School</h3>
+				<p>ICSE Examination: 86%</p>
+			</div>
+			<div class="Time">
+				<h4> June 2010 </h4>
+			</div>
+		</li>
+		<div style="clear:both;"></div>
+	</ul>
+</div>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+/*
+*/
+
+AOS.init({ offset: 0, delay: 0, duration: 800});
+
+$(document).ready(function(){
+$(".Avatar").hide(0).fadeIn(800);
+$(".Name").hide(0).fadeIn(800);
+$(".Social").hide(0).fadeIn(800);
+$(".Interests").hide(0).fadeIn(800);
+$(".Quote").hide(0).fadeIn(800);
+/*window.sr = ScrollReveal();*/
+/*sr.reveal('.Resume' , {origin: 'left',distance: '300px',easing: 'ease-in-out',duration: 800,});*/
+});
+
+var $animation_elements = $('.Event');
+var $window = $(window);
+
+
+function check_if_in_view() {
+  var window_height = $window.height();
+  var window_top_position = $window.scrollTop();
+  var window_bottom_position = (window_top_position + window_height);
+
+  $.each($animation_elements, function() {
+    var $element = $(this);
+    var element_height = $element.outerHeight();
+    var element_top_position = $element.offset().top;
+    var element_bottom_position = (element_top_position + element_height);
+
+    //check to see if this current container is within viewport
+    if ((element_bottom_position >= window_top_position) &&
+        (element_top_position <= window_bottom_position)) {
+      $element.addClass('in-view');
+    } else {
+      $element.removeClass('in-view');
+    }
+  });
+}
+
+
+</script>
+
+</body>
+</html>
